@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  keto-server:
+    image: oryd/keto:v0.10.0
+    working_dir: /home/ory
+    volumes:
+      - .:/home/ory
+    ports:
+      - "4466:4466"
+      - "4467:4467"
+    command: serve -c keto-server.yml
+    restart: on-failure
